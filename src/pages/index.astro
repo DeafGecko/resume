@@ -3,136 +3,583 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Dwight Rogers // Resume">
-	<main class="max-w-4xl mx-auto py-20 px-8">
-		<header class="mb-16">
-			<p
-				class="text-[#f57f00] font-mono text-sm tracking-widest mb-4 uppercase"
-			>
-				Dwight Rogers | DeafGecko
-			</p>
-			<h1
-				class="text-6xl font-black tracking-tighter leading-none mb-6"
-			>
-				Frontend Developer & <br />Design Engineer
-			</h1>
-			<p class="text-gray-400 text-lg max-w-2xl mb-2">
-				Reliable, ambitious team player passionate about using
-				multimedia platforms to convey concepts visually and
-				accurately within Deaf and Hearing communities.
-			</p>
-			<div class="mb-10">
-				<a
-					href="https://09labs-portfolio.vercel.app/"
-					class="text-[#f57f00] font-mono hover:underline uppercase tracking-widest text-sm"
-				>
-					← View Full Portfolio at 09labs
-				</a>
-			</div>
-		</header>
+      <html lang="en">
+      <head>
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <title>Dwight Rogers — Frontend Developer & Design Engineer</title>
+            
+            <!-- Google Fonts -->
+            <link rel="preconnect" href="https://fonts.googleapis.com" />
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+            <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap" rel="stylesheet" />
+            
+            <style>
+            *, *::before, *::after {
+                  box-sizing: border-box;
+                  margin: 0;
+                  padding: 0;
+            }
 
-		<section class="space-y-12">
-			<h2
-				class="text-[#f57f00] font-bold text-sm uppercase tracking-widest border-b border-gray-800 pb-4"
-			>
-				// Professional Experience
-			</h2>
+            /* ── DYNAMIC THEME VARIABLES ── */
+            :root {
+                  /* Default Dark Mode */
+                  --bg: #0a0a0a;
+                  --text: #f0ede8;
+                  --muted: #888480;
+                  --faint: #2a2a2a;
+                  --surface2: #161616;
+                  --border: rgba(255, 255, 255, 0.08);
+                  
+                  /* Brand Colors */
+                  --cyan: #388DF8;
+                  --cyan-dim: rgba(56, 141, 248, 0.12);
+                  
+                  /* Interactive Card Values */
+                  --card-bg: rgba(20, 20, 20, 0.5);
+                  --card-bg-hover: rgba(25, 25, 25, 0.8);
+                  --card-border: rgba(255, 255, 255, 0.04);
+                  --glow-core: rgba(56, 141, 248, 0.6);
+                  --bg-glow: rgba(56, 141, 248, 0.08);
 
-			{
-				[
-					{
-						role: "Director of Strategic Productions",
-						org: "Deaf Pathway Global",
-						date: "2016-Present",
-						desc: "Design, produce, and brand formats for Bible/Translation Apps. Manage graphic pipelines and support translation processes.",
-					},
-					{
-						role: "Local Church Planter",
-						org: "Columbia Deaf Church",
-						date: "2023-Present",
-						desc: "Weekly Bible instruction, mentorship, and stewardship of mission impact.",
-					},
-					{
-						role: "International Church Planter",
-						org: "International Mission Board",
-						date: "2009-2016",
-						desc: "Evangelism for Deaf people in East/South Asia. Logistics coordination and sign language training.",
-					},
-					{
-						role: "Creative Marketing",
-						org: "Temple Baptist Church",
-						date: "2004-2010",
-						desc: "Design, stagecraft, and lighting management for weekly services and events.",
-					},
-				].map((job) => (
-					<div class="grid md:grid-cols-[200px,1fr] gap-4">
-						<div class="text-gray-500 font-mono text-sm">
-							{job.date}
-						</div>
-						<div>
-							<h3 class="text-white font-bold text-lg">
-								{job.role}
-							</h3>
-							<p class="text-[#f57f00] font-semibold text-sm mb-2">
-								{job.org}
-							</p>
-							<p class="text-gray-400 text-sm leading-relaxed">
-								{job.desc}
-							</p>
-						</div>
-					</div>
-				))
-			}
-		</section>
+                  /* Typography */
+                  --mono: "DM Mono", monospace;
+                  --sans: "DM Sans", sans-serif;
+                  --heading: "Space Grotesk", sans-serif;
+            }
 
-		<section
-			class="mt-20 grid md:grid-cols-2 gap-8 border-t border-gray-800 pt-12"
-		>
-			<div>
-				<h2
-					class="text-[#f57f00] font-bold text-sm uppercase mb-6"
-				>
-					// Certifications
-				</h2>
-				<div class="bg-[#1a1a1a] p-6 border border-gray-800">
-					<h3 class="font-bold">Frontend Engineering</h3>
-					<p class="text-gray-400 text-sm">
-						Codecademy (May 2026)
-					</p>
-					<p class="text-[#f57f00] text-xs mt-2 italic">
-						Continuing to Full-Stack track
-					</p>
-				</div>
-			</div>
-			<div>
-				<h2
-					class="text-[#f57f00] font-bold text-sm uppercase mb-6"
-				>
-					// Academic Background
-				</h2>
-				<ul class="text-gray-300 text-sm space-y-4">
-					<li>
-						<strong>Seminary Certification</strong> | Deaf
-						Theological Center (2014)
-					</li>
-					<li>
-						<strong>AA Graphic Design</strong> | Greenville
-						Tech College
-					</li>
-					<li>
-						<strong>AS Electronic Engineering</strong> | Northeast
-						State
-					</li>
-				</ul>
-			</div>
-		</section>
+            /* Light Mode Overrides (Relaxed on the eyes, darker text) */
+            html.light-theme {
+                  --bg: #f4f5f7; /* Softer, relaxing off-white background */
+                  --text: #111827; /* Very dark slate for headings */
+                  --muted: #374151; /* Dark gray for easy-to-read <p> text */
+                  --faint: #e5e7eb;
+                  --surface2: #e5e7eb;
+                  --border: rgba(0, 0, 0, 0.1);
+                  --cyan-dim: rgba(56, 141, 248, 0.15);
+                  
+                  --card-bg: rgba(255, 255, 255, 0.7); /* Soft glass effect */
+                  --card-bg-hover: rgba(255, 255, 255, 1);
+                  --card-border: rgba(0, 0, 0, 0.08);
+                  --glow-core: rgba(56, 141, 248, 1);
+                  --bg-glow: rgba(56, 141, 248, 0.03);
+            }
 
-		<div class="mt-20 no-print">
-			<button
-				onclick="window.print()"
-				class="bg-[#f57f00] text-black font-bold px-8 py-3 hover:opacity-90 transition-opacity uppercase tracking-widest text-sm"
-			>
-				Save Resume as PDF
-			</button>
-		</div>
-	</main>
+            html {
+                  background: var(--bg);
+                  color: var(--text);
+                  font-family: var(--sans);
+                  font-size: 15px;
+                  line-height: 1.5;
+                  transition: background 0.3s ease, color 0.3s ease;
+            }
+
+            body {
+                  min-height: 100vh;
+                  background: var(--bg);
+            }
+
+            /* TYPOGRAPHY */
+            h1, h2, h3, h4, h5, h6, 
+            .project-name, .job-title, .cert-name, .section-label, .skill-group-name {
+                  font-family: var(--heading) !important;
+                  letter-spacing: -0.02em;
+            }
+
+            a { color: var(--cyan); text-decoration: none; }
+            a:hover { text-decoration: underline; }
+
+            /* SKIP LINK */
+            .skip-link {
+                  position: absolute; top: -100%; left: 1rem;
+                  background: var(--cyan); color: #000;
+                  padding: 8px 16px; border-radius: 4px; z-index: 100;
+            }
+            .skip-link:focus { top: 1rem; }
+
+            /* GLOBAL CURSOR GLOW */
+            #cursor-glow {
+                  position: fixed; width: 400px; height: 400px;
+                  background: radial-gradient(circle, var(--bg-glow) 0%, transparent 60%);
+                  border-radius: 50%; pointer-events: none;
+                  z-index: 0; transform: translate(-50%, -50%);
+            }
+
+            /* LAYOUT */
+            .page {
+                  max-width: 900px;
+                  margin: 0 auto;
+                  padding: 2rem 2rem 4rem;
+                  position: relative; z-index: 1; 
+            }
+
+            /* HEADER */
+            .header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-end;
+                  padding-bottom: 1.5rem;
+                  border-bottom: 1px solid var(--border);
+                  margin-bottom: 2rem;
+            }
+
+            .header-left { flex: 1; }
+
+            .eyebrow {
+                  font-family: var(--mono); font-size: 10px;
+                  letter-spacing: 0.15em; color: var(--cyan);
+                  text-transform: uppercase; margin-bottom: 0.5rem;
+                  display: flex; align-items: center; gap: 8px;
+            }
+            .eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--cyan); }
+
+            h1.name {
+                  font-size: clamp(2.2rem, 5vw, 2.8rem);
+                  font-weight: 900;
+                  line-height: 1;
+                  color: var(--text);
+                  margin-bottom: 0.5rem;
+            }
+            h1.name span { color: var(--cyan); font-weight: 900; }
+
+            .tagline {
+                  font-size: 13.5px; color: var(--muted);
+                  font-weight: 400; max-width: 500px; line-height: 1.5;
+            }
+
+            .header-links {
+                  display: flex; flex-direction: column; gap: 6px; align-items: flex-end;
+            }
+            .header-link {
+                  display: flex; align-items: center; gap: 6px;
+                  font-family: var(--mono); font-size: 11px; color: var(--muted);
+            }
+            .header-link:hover { color: var(--text); text-decoration: none; }
+            .header-link svg { width: 13px; height: 13px; }
+
+            /* GRID LAYOUT */
+            .resume-body {
+                  display: grid;
+                  grid-template-columns: 1fr 260px;
+                  gap: 2rem;
+                  align-items: start;
+            }
+
+            .section { margin-bottom: 2rem; }
+            .section-label {
+                  font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase;
+                  color: var(--muted); margin-bottom: 1rem;
+                  display: flex; align-items: center; gap: 10px;
+            }
+            .section-label::after { content: ""; flex: 1; height: 1px; background: var(--faint); }
+
+            /* ALIVE GLASSMORPHISM CARDS */
+            .glass-card {
+                  position: relative;
+                  background: var(--card-bg);
+                  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+                  border-radius: 8px;
+                  padding: 1rem 1.25rem;
+                  margin-bottom: 0.75rem;
+                  transition: transform 0.2s ease, background 0.2s ease;
+                  z-index: 1; overflow: hidden;
+                  border: 1px solid var(--card-border); 
+                  break-inside: avoid;
+                  page-break-inside: avoid;
+            }
+
+            .glass-card::before {
+                  content: ""; position: absolute; inset: 0;
+                  border-radius: inherit; padding: 1px;
+                  background: radial-gradient(
+                        350px circle at var(--mouse-x, -500px) var(--mouse-y, -500px),
+                        var(--glow-core), transparent 40%
+                  );
+                  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+                  -webkit-mask-composite: xor; mask-composite: exclude;
+                  z-index: -1; transition: opacity 0.3s ease;
+            }
+
+            .glass-card:hover { transform: translateY(-2px); background: var(--card-bg-hover); }
+
+            /* CARD CONTENTS */
+            .job-header, .project-header {
+                  display: flex; justify-content: space-between; align-items: flex-start;
+                  gap: 1rem; margin-bottom: 0.2rem;
+            }
+            .job-title, .project-name { font-size: 15px; font-weight: 600; color: var(--text); }
+            .job-date, .project-link { font-family: var(--mono); font-size: 10px; color: var(--muted); }
+            .job-org { font-size: 12px; color: var(--cyan); font-family: var(--mono); margin-bottom: 0.4rem; }
+            
+            /* Enhanced Paragraph legibility */
+            .job-desc, .project-desc { 
+                  font-size: 13.5px; 
+                  color: var(--muted); 
+                  line-height: 1.6; 
+                  font-weight: 400; /* Bumped slightly for crispness */
+            }
+            
+            .project-desc { margin-bottom: 8px; }
+            .project-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+            .tag {
+                  font-family: var(--mono); font-size: 9px; padding: 2px 6px;
+                  border-radius: 3px; background: var(--surface2); color: var(--muted);
+                  border: 1px solid var(--border);
+            }
+            .tag.accent { background: var(--cyan-dim); color: var(--cyan); border-color: rgba(56, 141, 248, 0.2); }
+
+            /* SIDEBAR SKILLS */
+            .skill-group { margin-bottom: 1rem; break-inside: avoid; }
+            .skill-group-name { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+            .skills-list { display: flex; flex-wrap: wrap; gap: 4px; }
+            .skill {
+                  font-size: 11px; padding: 3px 8px; border-radius: 4px;
+                  background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+            }
+            .skill.primary { background: var(--cyan-dim); color: var(--cyan); border-color: transparent; }
+
+            /* EDUCATION & CERT */
+            .edu-item { margin-bottom: 0.75rem; break-inside: avoid; }
+            .edu-degree, .cert-name { font-size: 13px; font-weight: 600; color: var(--text); }
+            .edu-school, .cert-issuer { font-size: 11px; color: var(--muted); font-family: var(--mono); }
+
+            /* AVAILABILITY */
+            .avail-badge {
+                  display: inline-flex; align-items: center; gap: 6px;
+                  background: var(--cyan-dim); border: 1px solid rgba(56, 141, 248, 0.2);
+                  border-radius: 20px; padding: 4px 12px; font-size: 11px;
+                  color: var(--cyan); font-family: var(--mono); margin-bottom: 1.5rem;
+            }
+            .avail-dot {
+                  width: 6px; height: 6px; border-radius: 50%; background: var(--cyan);
+                  animation: pulse-dot 2s ease-in-out infinite;
+            }
+            @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+            /* ACTIONS */
+            .actions { position: fixed; bottom: 2rem; right: 2rem; display: flex; gap: 8px; z-index: 50; }
+            .btn {
+                  display: flex; align-items: center; gap: 6px; padding: 8px 16px; border-radius: 6px;
+                  font-size: 12px; font-family: var(--mono); cursor: pointer; border: 1px solid var(--border);
+            }
+            .btn-primary { background: var(--cyan); color: #000; font-weight: 600; border: none; }
+            .btn-primary:hover { background: #2a7be6; color: #fff; }
+            .btn-secondary { background: var(--surface2); color: var(--text); }
+
+            /* ── PERFECT PDF/PRINT STYLES ── */
+            @media print {
+                  @page { margin: 0.4in; size: letter; }
+                  
+                  /* Forces Highly Readable Light Mode Variables */
+                  html { 
+                        font-size: 11px;
+                        --bg: #ffffff; /* Paper white */
+                        --text: #000000; /* Pure black for headings */
+                        --muted: #333333; /* Very dark gray for descriptions */
+                        --faint: #e0e0e0;
+                        --surface2: #f0f0f0;
+                        --border: rgba(0, 0, 0, 0.15);
+                        --card-bg: #ffffff;
+                        --card-border: rgba(0, 0, 0, 0.2);
+                  }
+                  
+                  body { background: var(--bg); color: var(--text); }
+                  .page { padding: 0; max-width: 100%; width: 100%; }
+                  .actions, .avail-badge, #cursor-glow { display: none !important; }
+                  
+                  .resume-body { 
+                        display: grid !important; 
+                        grid-template-columns: 1fr 220px !important; 
+                        gap: 1.5rem !important; 
+                  }
+                  
+                  .glass-card { 
+                        background: var(--card-bg) !important;
+                        border: 2px solid var(--card-border) !important;
+                        padding: 0.75rem 1rem !important;
+                        margin-bottom: 0.5rem !important;
+                        transform: none !important;
+                  }
+                  .glass-card::before { display: none !important; }
+                  
+                  /* Exact PDF Overrides for Typography */
+                  h1.name, h1.name span { color: var(--cyan) !important; }
+                  .job-title, .project-name, .cert-name, .edu-degree { color: #000 !important; }
+                  .eyebrow, .job-org, a { color: var(--cyan) !important; }
+                  .tag, .skill { background: var(--surface2) !important; border: 1px solid var(--border) !important; color: var(--text) !important; }
+            }
+
+            /* RESPONSIVE */
+            @media (max-width: 768px) {
+                  .header { flex-direction: column; align-items: flex-start; gap: 1rem; }
+                  .header-links { align-items: flex-start; }
+                  .resume-body { grid-template-columns: 1fr; gap: 2rem; }
+                  .actions, #cursor-glow, .glass-card::before { display: none; }
+            }
+            </style>
+      </head>
+      <body>
+            <div id="cursor-glow"></div>
+            <a href="#main" class="skip-link">Skip to main content</a>
+
+            <div class="page">
+            <header class="header">
+                  <div class="header-left">
+                        <div class="eyebrow">Frontend Developer · Design Engineer</div>
+                        <h1 class="name">Dwight Rogers</h1>
+                        <p class="tagline">
+                        Building cinematic, accessible web experiences for the Deaf community and beyond. 10 years of design — now engineering the products I always wanted to build.
+                        </p>
+                  </div>
+
+                  <nav class="header-links" aria-label="Contact links">
+                        <a href="https://09labs.dev" class="header-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        09labs.dev
+                        </a>
+                        <a href="https://github.com/DeafGecko" class="header-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                        DeafGecko
+                        </a>
+                        <a href="https://www.linkedin.com/in/dwight-rogers-22b417a8/" class="header-link" target="_blank" rel="noopener">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"></path><circle cx="4" cy="4" r="2"></circle></svg>
+                        LinkedIn
+                        </a>
+                        <span class="header-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Nashville, TN
+                        </span>
+                  </nav>
+            </header>
+
+            <div class="avail-badge" role="status">
+                  <span class="avail-dot" aria-hidden="true"></span>
+                  Available for design and frontend engineering roles
+            </div>
+
+            <main id="main">
+            <div class="resume-body">
+                  
+                  <!-- LEFT COLUMN -->
+                  <div class="main-col">
+                        <section class="section">
+                        <h2 class="section-label">Experience</h2>
+
+                        <div class="job glass-card">
+                              <div class="job-header">
+                              <h3 class="job-title">Director of Strategic Productions</h3>
+                              <div class="job-date">2016 — Present</div>
+                              </div>
+                              <div class="job-org">Deaf Pathway Global</div>
+                              <p class="job-desc">
+                              Design, produce, and brand multimedia formats for Bible and translation apps serving the global Deaf community. Manage graphic pipelines, UI systems, and support translation processes across East and South Asia.
+                              </p>
+                        </div>
+
+                        <div class="job glass-card">
+                              <div class="job-header">
+                              <h3 class="job-title">Frontend Developer — Freelance</h3>
+                              <div class="job-date">2023 — Present</div>
+                              </div>
+                              <div class="job-org">09 Labs · Nashville, TN</div>
+                              <p class="job-desc">
+                              Building accessible web products for the Deaf and Hard of Hearing community. Projects include ClearCard (AI communication tool), VANTGE (event photo platform), VoltFund (nonprofit dashboard), and Kanso (writing tool). Stack: React, Next.js, TypeScript, Tailwind, Supabase, Vercel.
+                              </p>
+                        </div>
+
+                        <div class="job glass-card">
+                              <div class="job-header">
+                              <h3 class="job-title">Local Church Planter</h3>
+                              <div class="job-date">2023 — Present</div>
+                              </div>
+                              <div class="job-org">Columbia Deaf Church</div>
+                              <p class="job-desc">
+                              Weekly Bible instruction, mentorship, and stewardship of mission impact for the Deaf community in Middle Tennessee.
+                              </p>
+                        </div>
+
+                        <div class="job glass-card">
+                              <div class="job-header">
+                              <h3 class="job-title">International Church Planter</h3>
+                              <div class="job-date">2009 — 2016</div>
+                              </div>
+                              <div class="job-org">International Mission Board</div>
+                              <p class="job-desc">
+                              Evangelism for Deaf people across East and South Asia. Logistics coordination, sign language training, and cross-cultural communication.
+                              </p>
+                        </div>
+
+                        <div class="job glass-card">
+                              <div class="job-header">
+                              <h3 class="job-title">Creative Marketing Director</h3>
+                              <div class="job-date">2004 — 2010</div>
+                              </div>
+                              <div class="job-org">Temple Baptist Church</div>
+                              <p class="job-desc">
+                              Design, stagecraft, and lighting management for weekly services and large-scale events.
+                              </p>
+                        </div>
+                        </section>
+
+                        <section class="section">
+                        <h2 class="section-label">Selected Projects</h2>
+
+                        <div class="project glass-card">
+                              <div class="project-header">
+                              <h3 class="project-name">ClearCard</h3>
+                              <a href="https://clearcard.09labs.dev" class="project-link" target="_blank" rel="noopener">clearcard.09labs.dev ↗</a>
+                              </div>
+                              <p class="project-desc">
+                              AI-powered visual communication cards for the Deaf and Hard of Hearing community. Smart Rewrite powered by Claude. Full accessibility — ARIA, keyboard nav, screen reader tested.
+                              </p>
+                              <div class="project-tags">
+                              <span class="tag accent">React</span> <span class="tag accent">TypeScript</span> <span class="tag accent">Claude AI</span> <span class="tag">Tailwind</span> <span class="tag">A11y</span>
+                              </div>
+                        </div>
+
+                        <div class="project glass-card">
+                              <div class="project-header">
+                              <h3 class="project-name">VANTGE</h3>
+                              <a href="https://vantge.app" class="project-link" target="_blank" rel="noopener">vantge.app ↗</a>
+                              </div>
+                              <p class="project-desc">
+                              Professional event photo platform — host dashboard, real-time guest uploads, Supabase Realtime photo approval, Cloudinary image pipeline, Stripe billing.
+                              </p>
+                              <div class="project-tags">
+                              <span class="tag accent">Next.js 15</span> <span class="tag accent">React 19</span> <span class="tag accent">Supabase</span> <span class="tag">TypeScript</span> <span class="tag">Stripe</span>
+                              </div>
+                        </div>
+
+                        <div class="project glass-card">
+                              <div class="project-header">
+                              <h3 class="project-name">VoltFund</h3>
+                              <a href="https://voltfund.09labs.dev" class="project-link" target="_blank" rel="noopener">voltfund.09labs.dev ↗</a>
+                              </div>
+                              <p class="project-desc">
+                              High-velocity nonprofit fund management dashboard. Deploy micro-grants, track allocations, live audit trail with screen-reader voice features.
+                              </p>
+                              <div class="project-tags">
+                              <span class="tag accent">Astro</span> <span class="tag accent">TypeScript</span> <span class="tag">Dashboard</span> <span class="tag">A11y</span>
+                              </div>
+                        </div>
+                        </section>
+                  </div>
+
+                  <!-- RIGHT SIDEBAR -->
+                  <aside class="sidebar">
+                        <section class="section">
+                        <h2 class="section-label">Skills</h2>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Core Stack</h3>
+                              <div class="skills-list">
+                              <span class="skill primary">React</span> <span class="skill primary">Next.js</span> <span class="skill primary">TypeScript</span> <span class="skill primary">Tailwind CSS</span> <span class="skill primary">JavaScript</span>
+                              </div>
+                        </div>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Frontend</h3>
+                              <div class="skills-list">
+                              <span class="skill">HTML5</span> <span class="skill">CSS3</span> <span class="skill">Framer Motion</span> <span class="skill">Astro</span> <span class="skill">Vite</span>
+                              </div>
+                        </div>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Backend & Data</h3>
+                              <div class="skills-list">
+                              <span class="skill">Supabase</span> <span class="skill">PostgreSQL</span> <span class="skill">REST APIs</span> <span class="skill">Vercel Edge</span>
+                              </div>
+                        </div>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Accessibility</h3>
+                              <div class="skills-list">
+                              <span class="skill primary">WCAG 2.1 AA</span> <span class="skill primary">ARIA</span> <span class="skill">Screen Reader</span> <span class="skill">Keyboard Nav</span>
+                              </div>
+                        </div>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Design & Tools</h3>
+                              <div class="skills-list">
+                              <span class="skill">Figma</span> <span class="skill">Git</span> <span class="skill">GitHub</span> <span class="skill">Vercel</span> <span class="skill">Cloudinary</span>
+                              </div>
+                        </div>
+
+                        <div class="skill-group">
+                              <h3 class="skill-group-name">Communication</h3>
+                              <div class="skills-list">
+                              <span class="skill primary">ASL</span> <span class="skill">Cross-cultural</span> <span class="skill">Team Collab</span>
+                              </div>
+                        </div>
+                        </section>
+
+                        <section class="section">
+                        <h2 class="section-label">Certifications</h2>
+                        <div class="cert-item glass-card">
+                              <h3 class="cert-name">Frontend Engineering</h3>
+                              <div class="cert-issuer">Codecademy · May 2026</div>
+                        </div>
+                        </section>
+
+                        <section class="section">
+                        <h2 class="section-label">Education</h2>
+                        <div class="edu-item glass-card">
+                              <h3 class="edu-degree">Seminary Cert</h3>
+                              <div class="edu-school">Deaf Theological Center · 2014</div>
+                        </div>
+                        <div class="edu-item glass-card">
+                              <h3 class="edu-degree">AA Graphic Design</h3>
+                              <div class="edu-school">Greenville Technical College</div>
+                        </div>
+                        <div class="edu-item glass-card">
+                              <h3 class="edu-degree">AS Electronic Eng.</h3>
+                              <div class="edu-school">Northeast State</div>
+                        </div>
+                        </section>
+                  </aside>
+            </div>
+            </main>
+            </div>
+
+            <div class="actions">
+                  <button id="theme-toggle" class="btn btn-secondary">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        Theme
+                  </button>
+                  <a href="https://09labs.dev" class="btn btn-secondary">Portfolio</a>
+                  <button onclick="window.print()" class="btn btn-primary">Save PDF</button>
+            </div>
+
+            <script>
+            // Theme Toggle Logic
+            const themeBtn = document.getElementById('theme-toggle');
+            if (themeBtn) {
+                  themeBtn.addEventListener('click', () => {
+                        document.documentElement.classList.toggle('light-theme');
+                  });
+            }
+
+            // Move the main background glow
+            const cursorGlow = document.getElementById('cursor-glow');
+            document.addEventListener('mousemove', (e) => {
+                  if(cursorGlow) {
+                        cursorGlow.style.left = e.clientX + 'px';
+                        cursorGlow.style.top = e.clientY + 'px';
+                  }
+            });
+
+            // Calculate mouse position relative to each card for the glowing border
+            document.addEventListener('mousemove', (e) => {
+                  const cards = document.querySelectorAll('.glass-card');
+                  cards.forEach(card => {
+                        const rect = card.getBoundingClientRect();
+                        const x = e.clientX - rect.left;
+                        const y = e.clientY - rect.top;
+                        card.style.setProperty('--mouse-x', `${x}px`);
+                        card.style.setProperty('--mouse-y', `${y}px`);
+                  });
+            });
+            </script>
+      </body>
+      </html>
 </Layout>
